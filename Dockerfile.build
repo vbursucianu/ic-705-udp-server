@@ -17,7 +17,7 @@ RUN cmake ..
 RUN make
 
 # expose the ports for networking
-EXPOSE 50001 50002 50003 50004
+EXPOSE 50001 50002 50003
 
 # Command to run the app
-#CMD ["./705udpserver"]
+CMD ["./705udpserver"]
