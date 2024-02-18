@@ -1,0 +1,23 @@
+# our local base image
+FROM ubuntu-cpp
+
+# copy the files into the image
+COPY . .
+
+# create the build directory
+RUN mkdir build
+
+# change directory to build 
+WORKDIR /home/dev/build
+
+# generate make file
+RUN cmake ..
+
+# compile the code
+RUN make
+
+# expose the ports for networking
+EXPOSE 50001 50002 50003 50004
+
+# Command to run the app
+#CMD ["./705udpserver"]
